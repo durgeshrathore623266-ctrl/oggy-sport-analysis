@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Oggy Sports Analyst</title>
+    <style>
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #1a0633; 
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: white;
+            padding-top: 30px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: #2a0b5a; 
+            padding: 30px 20px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 5px solid #ff007f;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .live-tag {
+            background: #ff4757;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+        h1 { 
+            margin: 10px 0; 
+            font-size: 26px; 
+            color: #ff9ff3; 
+            text-transform: uppercase; 
+            font-weight: 800; 
+            line-height: 1.1;
+        }
+
+        .sub-text { color: #bbb; font-size: 14px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .members-bar {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 12px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            font-weight: bold;
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stats-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.07);
+            padding: 15px 5px;
+            border-radius: 15px;
+            flex: 1;
+        }
+
+        .stat-value { font-size: 22px; font-weight: bold; display: block; }
+        .stat-label { font-size: 10px; color: #aaa; text-transform: uppercase; }
+
+        /* Button Styling */
+        .join-btn {
+            background: linear-gradient(90deg, #a55eea, #eb8b2d);
+            padding: 18px 10px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            width: 100%;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border: none;
+        }
+
+        .footer-tags { font-size: 11px; color: #999; display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .copyright { font-size: 10px; color: #555; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="oggy_logo.jpg" alt="Oggy" class="profile-pic">
+    <div class="live-tag">● LIVE NOW</div>
+    
+    <h1>Oggy Sports<br>Analyst</h1>
+    <p class="sub-text">Toss & Match Prediction</p>
+
+    <div class="members-bar">👥 4,300 ACTIVE MEMBERS</div>
+
+    <div class="stats-row">
+        <div class="stat-box">
+            <span class="stat-label">PREDICTIONS</span>
+            <span class="stat-value">4000+</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-label">WIN STREAK</span>
+            <span class="stat-value">95%</span>
+        </div>
+    </div>
+
+    <a href="https://t.me/+wX92XC6rRqcxNWY1" class="join-btn" id="tgLink">🚀 JOIN TELEGRAM CHANNEL</a>
+
+    <div class="footer-tags">
+        <span>✅ VERIFIED</span>
+        <span>🔒 SECURE</span>
+        <span>⚡ FAST</span>
+    </div>
+
+    <p class="copyright">© 2026 Oggy Sports Analyst</p>
+</div>
+
+<script>
+    // Link opening fix for Private Channels
+    document.getElementById('tgLink').onclick = function(e) {
+        e.preventDefault();
+        var url = "https://t.me/+wX92XC6rRqcxNWY1";
+        
+        // Pehle app kholne ki koshish karega
+        window.location.href = url;
+        
+        // Backup: Agar 500ms mein nahi khula toh naye tab mein khol dega
+        setTimeout(function() {
+            window.open(url, '_blank');
+        }, 500);
+    };
+</script>
+
+</body>
+</html>
